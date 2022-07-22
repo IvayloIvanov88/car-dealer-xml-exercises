@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<cars>
+    <car id="59" make="Toyota" model="Camry Hybrid" travelled-distance="2143647"/>
+    <car id="60" make="Toyota" model="Camry Hybrid" travelled-distance="214647"/>
+    <car id="48" make="Toyota" model="Corolla" travelled-distance="9223807"/>
+    <car id="52" make="Toyota" model="Corolla" travelled-distance="975807"/>
+    <car id="53" make="Toyota" model="Corolla" travelled-distance="21477"/>
+    <car id="51" make="Toyota" model="Corolla" travelled-distance="2147"/>
+    <car id="50" make="Toyota" model="Prius" travelled-distance="925807"/>
+    <car id="54" make="Toyota" model="Prius" travelled-distance="283647"/>
+    <car id="45" make="Toyota" model="Prius" travelled-distance="214747"/>
+    <car id="47" make="Toyota" model="Prius" travelled-distance="21477"/>
+    <car id="49" make="Toyota" model="Tacoma" travelled-distance="9225807"/>
+    <car id="58" make="Toyota" model="Tacoma" travelled-distance="2147"/>
+    <car id="55" make="Toyota" model="Tacoma" travelled-distance="927"/>
+    <car id="57" make="Toyota" model="Tacoma" travelled-distance="247"/>
+    <car id="46" make="Toyota" model="Yaris" travelled-distance="21477"/>
+    <car id="56" make="Toyota" model="Yaris" travelled-distance="9207"/>
+</cars>

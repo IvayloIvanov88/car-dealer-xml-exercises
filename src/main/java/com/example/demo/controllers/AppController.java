@@ -5,6 +5,7 @@ import com.example.demo.models.dtos.seeds.CarSeedRootDto;
 import com.example.demo.models.dtos.seeds.CustomerSeedRootDto;
 import com.example.demo.models.dtos.seeds.PartSeedRootDto;
 import com.example.demo.models.dtos.seeds.SuppliersSeedRootDto;
+import com.example.demo.models.dtos.views.CarViewRootDto;
 import com.example.demo.models.dtos.views.CustomerViewRootDto;
 import com.example.demo.serices.*;
 import com.example.demo.utils.XMLParser;
@@ -43,8 +44,14 @@ public class AppController implements CommandLineRunner {
 //        this.seedCars();
 //        this.seedCustomers();
 //        this.seedSales();
-        this.orderedCustomers();
+//        this.orderedCustomers();
+        this.carsFromMakeToyota();
 
+    }
+
+    private void carsFromMakeToyota() throws JAXBException {
+        CarViewRootDto carViewRootDto = this.carService.writeCarsFromMakeToyota();
+        this.xmlParser.marshalToXML(GlobalConstant.carsFromMakeToyota, carViewRootDto);
     }
 
     private void orderedCustomers() throws JAXBException {

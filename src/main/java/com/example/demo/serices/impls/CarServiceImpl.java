@@ -1,6 +1,8 @@
 package com.example.demo.serices.impls;
 
 import com.example.demo.models.dtos.seeds.CarSeedDto;
+import com.example.demo.models.dtos.views.CarViewDto;
+import com.example.demo.models.dtos.views.CarViewRootDto;
 import com.example.demo.models.entities.Car;
 import com.example.demo.repositories.CarRepository;
 import com.example.demo.serices.CarService;
@@ -14,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.validation.ConstraintViolation;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 @Service
 @Transactional
@@ -64,5 +67,18 @@ public class CarServiceImpl implements CarService {
     @Override
     public long getCarsCount() {
         return this.carRepository.count();
+    }
+
+    @Override
+    public CarViewRootDto writeCarsFromMakeToyota() {
+        CarViewRootDto carViewRootDto = new CarViewRootDto();
+
+        List<CarViewDto> carViewDto= this.carRepository.findByMakeOrderByModelAscThenByDistanceDesc("Toyota")
+                .stream()
+                .map(car -> this.modelMapper.map(car, CarViewDto.class))
+                .collect(Collectors.toList());
+        carViewRootDto.setCarViewDto(carViewDto);
+
+        return carViewRootDto;
     }
 }
